@@ -51,11 +51,11 @@ const MainSection = () => {
         temp.splice(e.target.value, 1)
         setNewProd([...temp]);
 
-        newProd.forEach(element => {
+        newProd.forEach(element => {     // Decreases amount from bill.
             amount = amount + element.productPrice;
         });
         setBill(amount);
-        // updateSubtractFromBill(tempPrice);
+
     }
 
     const updateProductList = (name, price) => {
@@ -66,7 +66,7 @@ const MainSection = () => {
             }]);
     }
 
-    const updateAddToBill = () => {  //this is not working becuase newProd has not been set yet think of some other way.
+    const updateAddToBill = () => {  
         let amount = 0;
         newProd.forEach(element => {
             amount = amount + element.productPrice;
@@ -75,10 +75,6 @@ const MainSection = () => {
 
     }
 
-    // const updateSubtractFromBill = (price) => {
-    //     setBill(bill-= price);
-    //     console.log(bill);
-    // }
 
 
     return (
